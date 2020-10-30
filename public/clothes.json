@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "brand": "A.Karina",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/14260000/14261755-1.jpg",
+    "price": 4900
+  },
+  {
+    "id": 2,
+    "brand": "A.Karina",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/9000000/9006222-1.jpg",
+    "price": 6490
+  },
+  {
+    "id": 3,
+    "brand": "A.Karina",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/14890000/14890355-1.jpg",
+    "price": 6000
+  },
+  {
+    "id": 4,
+    "brand": "Emse",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/7150000/7157686-1.jpg?_ga=2.118611978.2061489452.1603998881-1316237482.1603998881",
+    "price": 6900
+  },
+  {
+    "id": 5,
+    "brand": "SARTORI DODICI",
+    "title": "Пуховик",
+    "image": "https://images.wbstatic.net/big/new/14900000/14908379-1.jpg",
+    "price": 81300
+  },
+  {
+    "id": 6,
+    "brand": "A.Karina",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/8930000/8933054-1.jpg",
+    "price": 6490
+  },
+  {
+    "id": 7,
+    "brand": "Levi's",
+    "title": "Джинсы",
+    "image": "https://images.wbstatic.net/big/new/10720000/10720911-1.jpg",
+    "price": 7900
+  },
+  {
+    "id": 8,
+    "brand": "Emse",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/8260000/8266343-1.jpg",
+    "price": 11500
+  },
+  {
+    "id": 9,
+    "brand": "Marks & Spencer",
+    "title": "Брюки",
+    "image": "https://images.wbstatic.net/big/new/8660000/8665212-1.jpg",
+    "price": 3500
+  },
+  {
+    "id": 10,
+    "brand": "Panda",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/14190000/14195885-1.jpg",
+    "price": 5980
+  },
+  {
+    "id": 11,
+    "brand": "PRIO",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/6790000/6798283-1.jpg",
+    "price": 5500
+  },
+  {
+    "id": 12,
+    "brand": "Marks & Spencer",
+    "title": "Джеггинсы",
+    "image": "https://images.wbstatic.net/big/new/9420000/9425656-1.jpg",
+    "price": 2499
+  },
+  {
+    "id": 13,
+    "brand": "A.Karina",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/13270000/13272708-1.jpg",
+    "price": 6490
+  },
+  {
+    "id": 14,
+    "brand": "Emse",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/4830000/4835835-1.jpg",
+    "price": 6600
+  },
+  {
+    "id": 15,
+    "brand": "Mousa 9",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/15340000/15349378-1.jpg",
+    "price": 7500
+  },
+  {
+    "id": 16,
+    "brand": "D.VA",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/14760000/14769055-1.jpg",
+    "price": 10890
+  },
+  {
+    "id": 17,
+    "brand": "Panda",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/8920000/8921981-1.jpg",
+    "price": 3600
+  },
+  {
+    "id": 18,
+    "brand": "Levi's",
+    "title": "Джинсы",
+    "image": "https://images.wbstatic.net/big/new/6900000/6901103-1.jpg",
+    "price": 8900
+  },
+  {
+    "id": 19,
+    "brand": "Levi's",
+    "title": "Джинсы",
+    "image": "https://images.wbstatic.net/big/new/8250000/8255041-1.jpg",
+    "price": 7300
+  },
+  {
+    "id": 20,
+    "brand": "Gold Chic Chili",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/14860000/14865829-1.jpg",
+    "price": 6400
+  },
+  {
+    "id": 21,
+    "brand": "OLIVEGREY",
+    "title": "Платье",
+    "image": "https://images.wbstatic.net/big/new/15690000/15695617-1.jpg",
+    "price": 6800
+  }
+]

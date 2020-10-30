@@ -1,0 +1,13 @@
+.clothesList {
+  width: 100%;
+}
+
+.clothesList ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+

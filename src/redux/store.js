@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
-import booksReducer from './reducers/books-reducer';
+import clothesReducer from './reducers/clothes-reducer';
 
 const middlewares = [thunkMiddleware, logger]
 
 let reducers = combineReducers({
-  booksList: booksReducer
+  clothesList: clothesReducer
 })
 
 let store = createStore(reducers, applyMiddleware(...middlewares));
