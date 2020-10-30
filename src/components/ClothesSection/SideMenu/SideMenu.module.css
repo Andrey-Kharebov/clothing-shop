@@ -1,5 +1,107 @@
 .sideMenu {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   max-width: 250px;
   width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sideMenu span {
+  /* border: 1px solid violet; */
+  color: rgb(171, 171, 171);
+  margin: 0 auto;
+}
+
+.sideMenu ul {
+  border: 1px solid rgb(171, 171, 171);
+  border-radius: 10px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sideMenu ul li {
+  border-bottom: 1px solid rgb(171, 171, 171);
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.sideMenu ul li:last-child {
+  border-bottom: none;
+}
+
+
+
+/* CUSTOM RADIO */
+
+
+/* The container */
+.sideMenu ul li .inputContainer {
+  width: 100%;
+  height: inherit;
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide the browser's default radio button */
+.sideMenu ul li .inputContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.sideMenu ul li .inputContainer .checkmark {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.sideMenu ul li:hover input ~ .checkmark {
+  background-color: rgb(117, 117, 117);
+}
+
+/* When the radio button is checked, add a blue background */
+.sideMenu ul li .inputContainer input:checked ~ .checkmark {
+  background-color: rgb(171, 61, 161);;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.sideMenu ul li .inputContainer .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.sideMenu ul li .inputContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.sideMenu ul li .inputContainer .checkmark:after {
+ 	top: 5px;
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: white;
 }
