@@ -1,13 +1,14 @@
 import React from 'react';
+import priceSpacing from '../../../Helpers/priceSpacing';
 import classes from './ClothesItem.module.css';
 
-function ClothesItem({item}) {
+function ClothesItem({item, ...other}) {
+  
+  const price = priceSpacing(item.price);
 
-  function priceWithSpace(price) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }  
-
-  const price = priceWithSpace(item.price);
+  const addToCart = (payload) => {
+    other.addItemToCart(payload)
+  }
 
   return (
     <div className={classes.clothesItem}>
@@ -22,7 +23,7 @@ function ClothesItem({item}) {
           {price} <i className="fas fa-ruble-sign"></i>
         </div>
         <div>
-          <button>В корзину</button>
+          <button onClick={() => {addToCart(item)}}>В корзину</button>
           <div className={classes.hint}>
             <p>Добавить в корзину</p>
             <div className={classes.boxForHint}></div>

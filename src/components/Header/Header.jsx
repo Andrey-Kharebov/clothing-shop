@@ -20,10 +20,16 @@ function Header(props) {
           <i className='fas fa-search'></i>
         </div>
       </div>
-      <div className={classes.cartSection + ' ' + classes.active}>
-        <i className="fas fa-shopping-cart"></i>
-        <span>(10) - 11 400 руб.</span>
-      </div>
+      { props.items.length 
+        ? <div className={classes.cartSection + ' ' + classes.active}>
+            <i className="fas fa-shopping-cart"></i>
+            <span>({props.items.length}) - {props.totalCost} руб.</span>
+          </div>
+        : <div className={classes.cartSection}>
+            <i className="fas fa-shopping-cart"></i>
+            <span>({props.items.length}) - {props.totalCost} руб.</span>
+          </div>
+      }
     </div>
   );
 }

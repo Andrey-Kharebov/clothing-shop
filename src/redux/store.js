@@ -2,11 +2,13 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 import clothesReducer from './reducers/clothes-reducer';
+import cartReducer from './reducers/cart-reducer';
 
 const middlewares = [thunkMiddleware, logger]
 
 let reducers = combineReducers({
-  clothesList: clothesReducer
+  clothesList: clothesReducer,
+  cartList: cartReducer
 })
 
 let store = createStore(reducers, applyMiddleware(...middlewares));

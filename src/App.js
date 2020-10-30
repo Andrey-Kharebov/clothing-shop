@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './App.module.css';
 import ClothesSection from './components/ClothesSection/ClothesSection';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 const App = () => {
   return (
     <div className={classes.container}>
-      <Header />
+      <HeaderContainer />
       <ClothesSection />
     </div>
   );

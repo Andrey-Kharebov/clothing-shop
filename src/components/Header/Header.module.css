@@ -60,20 +60,34 @@
 }
 
 .cartSection {
-  /* border: 1px solid red; */
-  padding-left: 50px;
-  padding-right: 50px;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 250px;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .cartSection i {
+  position: absolute;
   color: rgba(0, 0, 0, 0.2);
   font-size: 35px;
+  transition: right 1s, transform 1s;
+}
+
+.cartSection span {
+  opacity: 0;
 }
 
 .cartSection.active i {
   color: #fff;
   font-size: 35px;
-  margin-right: 10px;
+  transform: translateX(-100px);
+}
+
+.cartSection.active span {
+  opacity: 1;
+  transition: 1s ease-out;
 }

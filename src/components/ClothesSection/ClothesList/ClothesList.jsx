@@ -11,7 +11,7 @@ function ClothesList(props) {
           : props.clothes.map(item => {
             return (
               <li key={ item.id }>
-                <ClothesItem item={ item } />
+                <ClothesItem item={ item } addItemToCart={ props.addItemToCart } />
               </li>
             )
         })}
