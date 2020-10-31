@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { setClothes } from '../../../redux/reducers/clothes-reducer';
 import { addItemToCart } from '../../../redux/reducers/cart-reducer';
 import ClothesList from './ClothesList';
+import { orderBy } from 'lodash';
+
 
 
 class ClothesListContainer extends React.Component {
@@ -21,9 +23,26 @@ class ClothesListContainer extends React.Component {
   }
 }
 
+const sortItemsBy = (items, sortBy) => {
+  switch (sortBy) {
+    case 'all':
+      return items;
+    case 'priceUp':
+      return orderBy(items, 'price', 'desc');
+    case 'priceLow':
+      return orderBy(items, 'price', 'asc');
+    case 'brand':
+      return orderBy(items, 'brand', 'asc');
+    case 'category':
+      return orderBy(items, 'title', 'asc');
+    default:
+      return items;
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
-    clothes: state.clothesList.items
+    clothes: sortItemsBy(state.clothesList.items, state.clothesList.sortBy)
   }
 }
 
@@ -38,5 +57,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-;
+
 export default connect(mapStateToProps, mapDispatchToProps)(ClothesListContainer);
