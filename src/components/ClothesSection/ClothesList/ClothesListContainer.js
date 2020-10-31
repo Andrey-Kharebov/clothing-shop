@@ -40,9 +40,21 @@ const sortItemsBy = (items, sortBy) => {
   }
 }
 
+const filterItems = (items, searchQuery) => 
+  items.filter(
+    i => 
+      i.title.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0 ||
+      i.brand.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0
+  )
+
+
+const searchItems = (items, sortBy, searchQuery) => {
+  return sortItemsBy(filterItems(items, searchQuery), sortBy)
+}
+
 const mapStateToProps = (state) => {
   return {
-    clothes: sortItemsBy(state.clothesList.items, state.clothesList.sortBy)
+    clothes: state.clothesList.items && searchItems(state.clothesList.items, state.filter.sortBy, state.filter.searchQuery)
   }
 }
 
