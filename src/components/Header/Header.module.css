@@ -87,6 +87,12 @@
   transform: translateX(-100px);
 }
 
+.cartSection.active:hover,
+.cartSection.active span:hover,
+.cartSection.active i:hover {
+  cursor: pointer;
+}
+
 .cartSection.active span {
   opacity: 1;
   transition: 1s ease-out;

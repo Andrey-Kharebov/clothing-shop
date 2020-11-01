@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Header.module.css';
 import halloween from '../assets/images/halloween.png';
+import HeaderCartContainer from './HeaderCart/HeaderCartContainer.js';
 
 function Header(props) {
 
@@ -24,10 +25,11 @@ function Header(props) {
           <i className='fas fa-search'></i>
         </div>
       </div>
-      { props.items.length 
+      { props.items.length
         ? <div className={classes.cartSection + ' ' + classes.active}>
             <i className="fas fa-shopping-cart"></i>
             <span>({props.items.length}) - {props.totalCost} руб.</span>
+            <HeaderCartContainer />
           </div>
         : <div className={classes.cartSection}>
             <i className="fas fa-shopping-cart"></i>

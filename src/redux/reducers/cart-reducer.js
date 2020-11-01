@@ -3,8 +3,7 @@ const REMOVE_ITEM_FROM_CART = 'REMOVE-ITEM-FROM-CART';
 const CLEAR_CART = 'CLEAR-CART';
 
 const initialState = {
-  items: [],
-  totalCost: 0
+  items: []
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -12,13 +11,12 @@ const cartReducer = (state = initialState, action) => {
     case ADD_ITEM_TO_CART:
       return {
         ...state,
-        items: [...state.items, action.payload],
-        totalCost: state.totalCost + action.payload.price
+        items: [...state.items, action.payload]
       }
     case REMOVE_ITEM_FROM_CART: 
       return {
         ...state,
-        items: state.items.filter(i => i.id !== action.payload.id) 
+        items: state.items.filter(i => i.id !== action.id) 
         // i остается если i.id не равен payload.id
       }
     case CLEAR_CART: 
@@ -32,7 +30,7 @@ const cartReducer = (state = initialState, action) => {
 }
 
 export const addItemToCart = (payload) => ({type: ADD_ITEM_TO_CART, payload})
-export const removeItemFromCart = (payload) => ({type: REMOVE_ITEM_FROM_CART, payload})
+export const removeItemFromCart = (id) => ({type: REMOVE_ITEM_FROM_CART, id})
 export const clearCart = () => ({type: CLEAR_CART})
 
 export default cartReducer;

@@ -4,6 +4,7 @@ import { setSearchQuery } from '../../redux/reducers/filter-reducer'
 import priceSpacing from '../Helpers/priceSpacing'
 import Header from './Header'
 
+
 const HeaderContainer = (props) => {
   const totalCost = priceSpacing(props.totalCost);
   return (
@@ -14,7 +15,7 @@ const HeaderContainer = (props) => {
 const thisStateToProps = (state) => {
   return {
     items: state.cartList.items,
-    totalCost: state.cartList.totalCost,
+    totalCost: state.cartList.items.reduce((total, item) => total + item.price, 0),
     searchQuery: state.filter.searchQuery
   }
 }

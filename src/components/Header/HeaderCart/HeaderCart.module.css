@@ -1,0 +1,72 @@
+.headerCart {
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  top: 40px;
+  left: -130px;
+  width: 370px;
+  height: auto;
+  /* border: 1px solid red; */
+  z-index: 100;
+  background: rgb(238, 238, 238);
+  cursor: default;
+}
+
+.headerCartItem {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+}
+
+.headerCartItem .brandAndTitle {
+  font-size: 12px;
+  color: rgb(153, 153, 153)
+}
+
+.headerCartItem .removeItemsButton button {
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(240, 75, 55);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.headerCartItem img {
+  max-width: 40px;
+  width: 100%;
+  height: auto;
+}
+
+.headerCart .headerCartOptions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.headerCart .headerCartOptions button {
+  width: 140px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(240, 75, 55);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.headerCart .headerCartOptions .makeAnOrder {
+  background: #00e676 ;
+}
+
+.headerCart .headerCartOptions .clearCart {
+  background: #ff3d00;
+}
