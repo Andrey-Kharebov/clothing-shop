@@ -4,6 +4,7 @@ import classes from './HeaderCart.module.css';
 function HeaderCart(props) {
   return (
     <div className={classes.headerCart}>
+      
       {props.uniqItems.map(item => {
         let itemCount = 0;
         
@@ -30,6 +31,9 @@ function HeaderCart(props) {
       <div className={classes.headerCartOptions}>
         <button className={classes.makeAnOrder}>Оформить заказ</button>
         <button className={classes.clearCart} onClick={() => {props.clearCart()}}>Очистить корзину</button>
+      </div>
+      <div className={classes.closeHaeaderCart}>
+        <i className="far fa-times-circle" onClick={() => {props.toggleActiveCart()}}></i>
       </div>
     </div>
   );

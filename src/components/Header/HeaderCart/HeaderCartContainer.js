@@ -2,11 +2,11 @@ import React from 'react';
 import { uniqBy } from 'lodash';
 import { connect } from 'react-redux';
 import HeaderCart from './HeaderCart';
-import { clearCart, removeItemFromCart } from '../../../redux/reducers/cart-reducer';
+import { clearCart, removeItemFromCart, toggleActiveCart } from '../../../redux/reducers/cart-reducer';
 
 function HeaderCartContainer(props) {
   return (
-    <HeaderCart uniqItems={ props.uniqItems } items={ props.items } clearCart={ props.clearCart } removeItemFromCart={ props.removeItemFromCart } />
+    <HeaderCart uniqItems={ props.uniqItems } items={ props.items } clearCart={ props.clearCart } removeItemFromCart={ props.removeItemFromCart } toggleActiveCart={ props.toggleActiveCart } />
   );
 }
 
@@ -17,5 +17,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { clearCart, removeItemFromCart })(HeaderCartContainer);
+export default connect(mapStateToProps, { clearCart, removeItemFromCart, toggleActiveCart })(HeaderCartContainer);
 

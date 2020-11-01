@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from './Header.module.css';
 import halloween from '../assets/images/halloween.png';
 import HeaderCartContainer from './HeaderCart/HeaderCartContainer.js';
 
 function Header(props) {
-
   const onChangeInput = (event) => {
     props.setSearchQuery(event.target.value)
   }
-
+  
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
@@ -27,9 +26,9 @@ function Header(props) {
       </div>
       { props.items.length
         ? <div className={classes.cartSection + ' ' + classes.active}>
-            <i className="fas fa-shopping-cart"></i>
-            <span>({props.items.length}) - {props.totalCost} руб.</span>
-            <HeaderCartContainer />
+            <i className="fas fa-shopping-cart" onClick={() => {props.toggleActiveCart()}}></i>
+            <span onClick={() => {props.toggleActiveCart()}}>({props.items.length}) - {props.totalCost} руб.</span>
+            { props.activeCart ? <HeaderCartContainer /> : '' }
           </div>
         : <div className={classes.cartSection}>
             <i className="fas fa-shopping-cart"></i>

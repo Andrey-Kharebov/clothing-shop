@@ -1,9 +1,11 @@
 const ADD_ITEM_TO_CART = 'ADD-ITEM-TO-CART';
 const REMOVE_ITEM_FROM_CART = 'REMOVE-ITEM-FROM-CART';
 const CLEAR_CART = 'CLEAR-CART';
+const TOGGLE_ACTIVE_CART = 'TOGGLE-ACTIVE-CART';
 
 const initialState = {
-  items: []
+  items: [], 
+  activeCart: false
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -24,6 +26,11 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         items: []
       }
+    case TOGGLE_ACTIVE_CART:
+      return {
+        ...state,
+        activeCart: !state.activeCart
+      }
     default:
       return state;
   }
@@ -32,5 +39,6 @@ const cartReducer = (state = initialState, action) => {
 export const addItemToCart = (payload) => ({type: ADD_ITEM_TO_CART, payload})
 export const removeItemFromCart = (id) => ({type: REMOVE_ITEM_FROM_CART, id})
 export const clearCart = () => ({type: CLEAR_CART})
+export const toggleActiveCart = () => ({type: TOGGLE_ACTIVE_CART})
 
 export default cartReducer;

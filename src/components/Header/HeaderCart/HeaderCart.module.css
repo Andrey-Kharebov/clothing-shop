@@ -3,11 +3,11 @@
   border-radius: 5px;
   padding: 10px;
   position: absolute;
-  top: 40px;
-  left: -130px;
+  top: 35px;
+  left: -160px;
   width: 370px;
   height: auto;
-  /* border: 1px solid red; */
+  /* border: 1px   solid red; */
   z-index: 100;
   background: rgb(238, 238, 238);
   cursor: default;
@@ -69,4 +69,15 @@
 
 .headerCart .headerCartOptions .clearCart {
   background: #ff3d00;
+}
+
+.headerCart .closeHaeaderCart {
+  position: absolute;
+  top: 0px;
+  right: -105px;  
+}
+
+.headerCart .closeHaeaderCart i {
+  font-size: 20px;
+  color: red;
 }
