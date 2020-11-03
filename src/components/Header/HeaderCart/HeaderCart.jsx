@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './HeaderCart.module.css';
 
 function HeaderCart(props) {
@@ -29,7 +30,9 @@ function HeaderCart(props) {
         )
       })}
       <div className={classes.headerCartOptions}>
-        <button className={classes.makeAnOrder}>Оформить заказ</button>
+        <NavLink to={'/cart'}>
+          <button className={classes.makeAnOrder} onClick={() => {props.toggleActiveCart()}}>Оформить заказ</button>
+        </NavLink>
         <button className={classes.clearCart} onClick={() => {props.clearCart()}}>Очистить корзину</button>
       </div>
       <div className={classes.closeHaeaderCart}>

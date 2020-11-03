@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './Header.module.css';
 import halloween from '../assets/images/halloween.png';
 import HeaderCartContainer from './HeaderCart/HeaderCartContainer.js';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
   const onChangeInput = (event) => {
     props.setSearchQuery(event.target.value)
   }
+
   
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <h2>
-          CLOTHING SHOP 
-        </h2>
+        <NavLink to={'/'}><h2>CLOTHING SHOP</h2></NavLink>
         <div>
           <img src={halloween} alt='logo' />     
         </div>
