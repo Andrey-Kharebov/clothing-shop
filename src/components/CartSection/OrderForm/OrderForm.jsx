@@ -5,6 +5,9 @@ import { Field, reset, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { uniqBy } from 'lodash';
 import { clearCart } from '../../../redux/reducers/cart-reducer';
+import { cardNumberLengthWithSpaces, exactLengthCreator, maxLengthCreator, maxNumberValue, noLetters, onlyNumbers, required, validateEmail } from '../../Helpers/validators';
+import { Element } from '../../Helpers/FormControls/FormControls';
+import cardNumberSpacing from '../../Helpers/cardNumberSpacing';
 
 function OrderForm(props) {
   const onSubmit = (formData, dispatch) => {
@@ -26,6 +29,11 @@ let OrderReduxForm = reduxForm({
 })(OrderFormBody)
 
 
+const Input = Element('input');
+const exactLength2 = exactLengthCreator(2);
+const exactLength3 = exactLengthCreator(3);
+const maxLength11 = maxLengthCreator(11);
+
 function OrderFormBody(props) {
   return (
     <form onSubmit={ props.handleSubmit }>
@@ -33,16 +41,16 @@ function OrderFormBody(props) {
         <h2>Address details</h2>
 
         <div className={classes.clientContacts}>
-          <label>Имя<Field name={'name'} component={'input'}></Field></label>
-          <label>Номер телефона<Field name={'phoneNumber'} component={'input'}></Field></label>
-          <label>Email<Field name={'email'} component={'input'}></Field></label> 
+          <label>Имя<Field name={'name'} component={Input} validate={[required]}></Field></label>
+          <label>Номер телефона<Field name={'phoneNumber'} component={Input} validate={[required, noLetters, maxLength11]}></Field></label>
+          <label>Email<Field name={'email'} component={Input} validate={[required, validateEmail]}></Field></label> 
         </div>
         <div className={classes.clientAddress}> 
           <div className={classes.stateAndCity}>
-            <label>Страна<Field name={'state'} component={'input'}></Field></label> 
-            <label>Город<Field name={'city'} component={'input'}></Field></label>
+            <label>Страна<Field name={'state'} component={Input} validate={[required]}></Field></label> 
+            <label>Город<Field name={'city'} component={Input} validate={[required]}></Field></label>
           </div>
-          <label>Адрес<Field name={'address'} component={'input'}></Field></label>
+          <label>Адрес<Field name={'address'} component={Input} validate={[required]}></Field></label>
         </div>
       </div>
       <div className={classes.detailsCard}>
@@ -53,7 +61,7 @@ function OrderFormBody(props) {
             <img src={masterCard} alt="masterCardLogo"/>
           </div>
           <div className={classes.cardNumber}>
-            {props.cardValues && props.cardValues.cardNumber ? props.cardValues.cardNumber : '1122 3344 5566 7788'}
+            {props.cardValues && props.cardValues.cardNumber ? cardNumberSpacing(props.cardValues.cardNumber) : '1122 3344 5566 7788'}
           </div>
           <div>
             <div></div>
@@ -64,12 +72,12 @@ function OrderFormBody(props) {
           </div>
         </div>
         <div className={classes.cardInfo}>
-          <label>Имя на карте<Field name={'nameOnCard'} component={'input'} value={'Leeroy Jenkins'}></Field></label>
-          <label>Номер карты<Field name={'cardNumber'} component={'input'}></Field></label>
+          <label>Имя на карте<Field name={'nameOnCard'} component={Input} validate={[required]}></Field></label>
+          <label>Номер карты<Field name={'cardNumber'} component={Input} normalize={cardNumberSpacing} validate={[required, cardNumberLengthWithSpaces]}></Field></label>
           <div className={classes.expDataAndCvv}>
-            <label>Месяц<Field name={'month'} component={'input'}></Field></label>
-            <label>Год<Field name={'year'} component={'input'}></Field></label>
-            <label>CVV<Field name={'cvv'} component={'input'}></Field></label>
+            <label>Месяц<Field name={'month'} component={Input} validate={[required, onlyNumbers, maxNumberValue, exactLength2]}></Field></label>
+            <label>Год<Field name={'year'} component={Input} validate={[required, onlyNumbers, exactLength2]}></Field></label>
+            <label>CVV<Field name={'cvv'} component={Input} validate={[required, onlyNumbers, exactLength3]}></Field></label>
           </div>
         </div>
         <div className={classes.buy}>

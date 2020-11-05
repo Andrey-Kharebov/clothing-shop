@@ -12,7 +12,7 @@ form {
   border: 1px solid rgb(170, 170, 170);
   border-radius: 5px;
   width: 275px;
-  height: 550px;
+  height: 600px;
   background: linear-gradient(135deg, rgba(53, 59, 78, 1) 0%, rgba(37, 42, 55, 1) 100%);
   padding: 20px 35px 20px 35px;
 }
@@ -35,15 +35,7 @@ form {
 }
 
 .clientInfo .detailsCard input {
-  margin-top: 5px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
-  border-bottom: 1px solid rgb(170, 170, 170);
-  margin-bottom: 25px;
-  padding: 5px;
+  
 }
 
 .clientInfo .detailsCard .clientContacts {
@@ -57,6 +49,7 @@ form {
 .clientInfo .detailsCard .clientAddress .stateAndCity {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .clientInfo .detailsCard .clientAddress .stateAndCity label {
@@ -93,7 +86,7 @@ form {
 }
 
 .clientInfo .detailsCard .cardInfo {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .clientInfo .detailsCard .expDataAndCvv {
@@ -106,6 +99,7 @@ form {
 }
 
 .buy button {
+  margin-top: 40px;
   border: none;
   border-radius: 5px;
   width: 100%;
