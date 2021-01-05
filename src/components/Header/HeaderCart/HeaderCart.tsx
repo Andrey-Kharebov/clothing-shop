@@ -2,14 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './HeaderCart.module.css';
 
-function HeaderCart(props) {
+// TypeScripts imports
+import { ItemType } from '../../../types/types';
+
+type PropsType = {
+  uniqItems: Array<ItemType>,
+  items: Array<ItemType>,
+
+  clearCart: () => void,
+  removeItemFromCart: (id: number) => void,
+  toggleActiveCart: () => void
+}
+
+const HeaderCart: React.FC<PropsType> = (props) => {
   return (
     <div className={classes.headerCart}>
       
-      {props.uniqItems.map(item => {
+      {props.uniqItems.map((item: ItemType) => {
         let itemCount = 0;
         
-        props.items.forEach(element => {
+        props.items.forEach((element: ItemType) => {
           if (element.id === item.id) {
             itemCount++;
           }
